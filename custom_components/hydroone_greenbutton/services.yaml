@@ -1,0 +1,3 @@
+refresh:
+  name: Refresh hourly history
+  description: Download recent Hydro One hourly consumption and update Energy statistics.

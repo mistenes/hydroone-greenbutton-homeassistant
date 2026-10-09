@@ -1,0 +1,16 @@
+{
+  "domain": "hydroone_greenbutton",
+  "name": "Hydro One Green Button",
+  "version": "0.1.0",
+  "config_flow": true,
+  "documentation": "https://github.com/mistenes/hydroone-greenbutton-homeassistant",
+  "dependencies": [
+    "recorder"
+  ],
+  "codeowners": [
+    "@mistenes"
+  ],
+  "iot_class": "cloud_polling",
+  "integration_type": "service",
+  "issue_tracker": "https://github.com/mistenes/hydroone-greenbutton-homeassistant/issues"
+}

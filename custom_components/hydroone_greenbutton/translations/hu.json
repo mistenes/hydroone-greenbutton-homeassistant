@@ -1,0 +1,37 @@
+{
+  "title": "Hydro One Green Button",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hydro One belépés",
+        "description": "Az óránkénti fogyasztási előzményeket automatikusan, 24 óránként tölti le. A Hydro One belépési adatait itt, a saját Home Assistantban add meg. A portált használó, nem hivatalos integráció. A belépési adatok a Home Assistant konfigurációjában és biztonsági mentéseiben tárolódnak.",
+        "data": {"username": "Hydro One email", "password": "Hydro One jelszó"}
+      },
+      "meter": {
+        "title": "Villanyóra kiválasztása",
+        "description": "A kezdeti előzményeket egyszer importálja. Később az előző 14 napot is újra letölti, hogy a késő és javított adatok bekerüljenek.",
+        "data": {"contract_id": "Villanyóra", "history_days": "Kezdeti előzmények (nap)"}
+      },
+      "reauth_confirm": {
+        "title": "Hydro One újracsatlakoztatása",
+        "description": "Add meg a kiválasztott számlához tartozó aktuális belépési adatokat.",
+        "data": {"username": "Hydro One email", "password": "Hydro One jelszó"}
+      }
+    },
+    "error": {
+      "invalid_auth": "A Hydro One nem fogadta el a belépést. Ellenőrizd az adatokat és azt, hogy a portál kér-e további hitelesítést.",
+      "cannot_connect": "Nem sikerült elérni a Hydro One portált. Karbantartás vagy megváltozott portálválasz is okozhatja.",
+      "no_meters": "A fiókhoz nem érkezett villanyóra.",
+      "wrong_account": "Ezekkel a belépési adatokkal nem érhető el a kiválasztott villanyóra."
+    },
+    "abort": {"already_configured": "Ez a villanyóra már be van állítva.", "reauth_successful": "A Hydro One belépési adatai frissültek."}
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Automatikus frissítés",
+        "data": {"poll_hours": "Frissítési időköz (óra)", "lookback_days": "Előzmények újraellenőrzése (nap)"}
+      }
+    }
+  }
+}

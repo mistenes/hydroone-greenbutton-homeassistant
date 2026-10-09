@@ -1,0 +1,37 @@
+{
+  "title": "Hydro One Green Button",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hydro One portal login",
+        "description": "Downloads hourly electricity history automatically every 24 hours. Enter your Hydro One credentials here in your own Home Assistant. This uses the customer portal; it is an unofficial integration. Credentials are stored in Home Assistant's config entries and backups.",
+        "data": {"username": "Hydro One email", "password": "Hydro One password"}
+      },
+      "meter": {
+        "title": "Choose the electricity meter",
+        "description": "Initial history is imported once. Later downloads overlap the last 14 days to include delayed data and corrections.",
+        "data": {"contract_id": "Electricity meter", "history_days": "Initial history (days)"}
+      },
+      "reauth_confirm": {
+        "title": "Reconnect Hydro One",
+        "description": "Enter the current credentials for the existing electricity account.",
+        "data": {"username": "Hydro One email", "password": "Hydro One password"}
+      }
+    },
+    "error": {
+      "invalid_auth": "Hydro One did not accept the login. Check the credentials and whether the portal requires additional verification.",
+      "cannot_connect": "Could not reach the Hydro One portal. It may be under maintenance, or the portal response may have changed.",
+      "no_meters": "No metered electricity accounts were returned.",
+      "wrong_account": "These credentials do not provide access to the selected electricity meter."
+    },
+    "abort": {"already_configured": "This electricity meter is already configured.", "reauth_successful": "Hydro One credentials updated."}
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Automatic updates",
+        "data": {"poll_hours": "Update interval (hours)", "lookback_days": "Recheck recent history (days)"}
+      }
+    }
+  }
+}
