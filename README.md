@@ -2,7 +2,7 @@
 
 Saját Home Assistant-integráció a Hydro One óránkénti fogyasztási előzményeihez. A myAccount-portál által használt belépést és Green Button XML-exportot hívja meg, majd az órákat a Home Assistant hosszú távú energiastatisztikáiba írja.
 
-**Állapot: 0.1.0, élő bejelentkezéssel még nem ellenőrzött első változat.** A feldolgozást, az átfedések kezelését és a letöltési kérések felépítését 28, személyes adatokat nem tartalmazó teszt ellenőrzi. A Recorder-hívásokat a célrendszer Home Assistant Core 2026.9.2 forrásával vetettük össze; a teljes integráció HA alatti futását még ellenőrizni kell.
+**Állapot: 0.1.1, élő bejelentkezéssel még nem ellenőrzött első változat.** A feldolgozást, az átfedések kezelését és a letöltési kérések felépítését 28, személyes adatokat nem tartalmazó teszt ellenőrzi. A Recorder-hívásokat a célrendszer Home Assistant Core 2026.9.2 forrásával vetettük össze; a teljes integráció HA alatti futását még ellenőrizni kell.
 
 ## Működés
 
@@ -17,6 +17,15 @@ Saját Home Assistant-integráció a Hydro One óránkénti fogyasztási előzm�
 A Hydro One által közzétett történeti adatokat importálja. Az adat megjelenése a szolgáltatótól függ; a frissítés nem teszi azokat valós idejű mérési adatokká.
 
 ## Telepítés
+
+### HACS
+
+1. **HACS → ⋮ → Custom repositories**: add hozzá a `https://github.com/mistenes/hydroone-greenbutton-homeassistant` repót **Integration** típusként.
+2. Nyisd meg a **Hydro One Green Button** adatlapját. Ha már korábban hozzáadtad, válaszd a **⋮ → Update information** műveletet az elérhető verziók frissítéséhez.
+3. A **Download** ablakban válaszd a **v0.1.1** vagy újabb kiadást. A régi `5c24967` commit és a `v0.1.0` nem tartalmazza a szükséges `hacs.json` fájlt.
+4. A letöltés után add hozzá az integrációt a **Settings → Devices & services** oldalon. Ha a Home Assistant újraindítást kér, indítsd újra a Core-t.
+
+### Kézi telepítés
 
 1. A ZIP `custom_components/hydroone_greenbutton` mappáját másold a Home Assistant konfigurációs könyvtárának `custom_components` mappájába. A végeredmény például `/config/custom_components/hydroone_greenbutton/manifest.json`.
 2. Indítsd újra a Home Assistant Core-t.

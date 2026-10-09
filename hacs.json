@@ -1,0 +1,8 @@
+{
+  "name": "Hydro One Green Button",
+  "country": ["CA"],
+  "homeassistant": "2026.9.2",
+  "render_readme": true,
+  "content_in_root": false,
+  "zip_release": false
+}

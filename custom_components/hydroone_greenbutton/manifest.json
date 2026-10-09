@@ -1,7 +1,7 @@
 {
   "domain": "hydroone_greenbutton",
   "name": "Hydro One Green Button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "config_flow": true,
   "documentation": "https://github.com/mistenes/hydroone-greenbutton-homeassistant",
   "dependencies": [
